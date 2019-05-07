@@ -1,0 +1,36 @@
+{
+  "name": "multiple-page-webpack-plugin",
+  "version": "1.0.0",
+  "description": "webpack多页面集中式页面配置，自动生成各页面的入口文件和模板文件，优化目录结构，支持新增页面热更新",
+  "author": "mingdev <mingdev@163.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingdev123/multiple-page-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-plugin",
+    "multiple-page-webpack-plugin",
+    "page"
+  ],
+  "bugs": {
+    "url": "https://github.com/mingdev123/multiple-page-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/mingdev123/multiple-page-webpack-plugin#readme",
+  "dependencies": {
+    "html-webpack-plugin": "^3.2.0"
+  },
+  "devDependencies": {
+    "glob": "^7.1.3",
+    "glob-base": "^0.3.0",
+    "webpack": "*"
+  }
+}
