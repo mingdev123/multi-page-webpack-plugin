@@ -26,11 +26,11 @@
   },
   "homepage": "https://github.com/mingdev123/multiple-page-webpack-plugin#readme",
   "dependencies": {
+    "glob": "^7.1.3",
+    "glob-base": "^0.3.0",
     "html-webpack-plugin": "^3.2.0"
   },
   "devDependencies": {
-    "glob": "^7.1.3",
-    "glob-base": "^0.3.0",
     "webpack": "*"
   }
 }
