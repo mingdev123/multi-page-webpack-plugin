@@ -1,5 +1,5 @@
 {
-  "name": "multiple-page-webpack-plugin",
+  "name": "multi-html-webpack-build-plugin",
   "version": "1.0.0",
   "description": "webpack多页面集中式页面配置，自动生成各页面的入口文件和模板文件，优化目录结构，支持新增页面热更新",
   "author": "mingdev <mingdev@163.com>",
@@ -18,7 +18,7 @@
   "keywords": [
     "webpack",
     "webpack-plugin",
-    "multiple-page-webpack-plugin",
+    "multi-html-webpack-build-plugin",
     "page"
   ],
   "bugs": {
