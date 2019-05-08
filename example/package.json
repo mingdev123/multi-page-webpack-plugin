@@ -5,7 +5,7 @@
     "entry": "node_modules/.bin/webpack --inline --progress --config entry/webpack.config.js",
     "entryAndTemplate": "node_modules/.bin/webpack --inline --progress --config entryAndTemplate/webpack.config.js",
     "entryAndCustomTemplate": "node_modules/.bin/webpack --inline --progress --config entryAndCustomTemplate/webpack.config.js",
-    "entryAndTemplateAndStyle": "node_modules/.bin/webpack --config entryAndTemplateAndStyle/webpack.config.js"
+    "entryAndTemplateAndStyle": "node_modules/.bin/webpack --inline --progress --config entryAndTemplateAndStyle/webpack.config.js"
   },
   "devDependencies": {
     "css-loader": "^2.1.1",
