@@ -5,14 +5,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MultiEntryPlugin = require('webpack/lib/MultiEntryPlugin')
 const SingleEntryPlugin = require('webpack/lib/SingleEntryPlugin')
 
-//目录
-let directories = []
-//entry对象
-let entryObject = {}
-//template对象
-let templateObject = {}
+let directories = []  //目录
 
-//获取entry名称 {xx/xx/xx.js =====> xx/xx/xx}
+let entryObject = {}  //entry对象
+
+let templateObject = {} //template对象
+
+/**
+ * 获取entry名称 {xx/xx/xx.js =====> xx/xx/xx}
+ * @param globBase
+ * @param file
+ * @return {string}
+ */
 const getEntryName = (globBase, file) => {
   if (directories.indexOf(globBase) === -1) {
     directories.push(globBase)
@@ -38,7 +42,6 @@ module.exports = class MultiHtmlWebpackBuildPlugin {
 
     const {entry, template, style} = pattern || {}
 
-    //获取entry
     if (!entry) {
       //如果entry没有并且有template时，添加一个空的js文件，不然没有entry了
       if (template) entryObject = {emptyEntry: [path.resolve(__dirname, './empty.js')]}
@@ -50,8 +53,8 @@ module.exports = class MultiHtmlWebpackBuildPlugin {
       })
     }
 
-    //获取样式 将样式文件添加到entry中去
     if (style) {
+      //获取样式 将样式文件添加到entry中去
       const _styleGlobBase = globBasePlugin(entry).base
       glob.sync(style).forEach(file => {
         const entryName = getEntryName(_styleGlobBase, file)
@@ -63,8 +66,8 @@ module.exports = class MultiHtmlWebpackBuildPlugin {
       })
     }
 
-    //获取html
     if (template) {
+      //获取html
       const _templateGlobBase = globBasePlugin(template).base
       glob.sync(template).forEach(file => {
         const entryName = getEntryName(_templateGlobBase, file)

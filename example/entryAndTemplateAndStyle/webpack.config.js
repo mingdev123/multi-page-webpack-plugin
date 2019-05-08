@@ -1,6 +1,6 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const multiHtmlWebpackBuildPlugin = require('../../lib')
+const multiHtmlWebpackBuildPlugin = require('multiple-page-webpack-plugin')
 
 module.exports = {
   mode: 'production',

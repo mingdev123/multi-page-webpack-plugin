@@ -4,12 +4,13 @@
   "description": "webpack多页面集中式页面配置，自动生成各页面的入口文件和模板文件，优化目录结构，支持新增页面热更新",
   "author": "mingdev <mingdev@163.com>",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "node_modules/.bin/rimraf ./dist",
+    "build": "cross-env NODE_ENV=production babel src -d dist --copy-files"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,17 @@
     "html-webpack-plugin": "^3.2.0"
   },
   "devDependencies": {
-    "webpack": "*"
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "cross-env": "^5.2.0",
+    "rimraf": "^2.6.3",
+    "webpack": "^4.4.0"
+  },
+  "peerDependencies": {
+    "webpack": "^4.4.0"
+  },
+  "engines": {
+    "node": ">= 6.9.0"
   }
 }

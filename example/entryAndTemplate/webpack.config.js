@@ -1,5 +1,5 @@
 const path = require('path')
-const multiHtmlWebpackBuildPlugin = require('../../lib')
+const multiHtmlWebpackBuildPlugin = require('multiple-page-webpack-plugin')
 
 module.exports = {
   mode: 'production',
