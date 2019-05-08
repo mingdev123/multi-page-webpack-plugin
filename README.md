@@ -1,6 +1,6 @@
 ##### webpack 多页面插件
 ```
-npm i multi-html-webpack-build-plugin -D
+npm i multiple-page-webpack-plugin -D
 ```
 ```
 //动态获取entry
