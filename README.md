@@ -4,26 +4,26 @@ npm i multiple-page-webpack-plugin -D
 ```
 ```
 //动态获取entry
-entry:MultiHtmlWebpackBuildPlugin.getEntry(path.resolve(__dirname, './libs/**/*.js'))
+entry:MultiplePageWebpackPlugin.getEntry(path.resolve(__dirname, './libs/**/*.js'))
 ```
 ```
 //动态获取entry和template
-entry:MultiHtmlWebpackBuildPlugin.getEntry({
+entry:MultiplePageWebpackPlugin.getEntry({
   entry: path.resolve(__dirname, './pages/**/*.js'),
   template: path.resolve(__dirname, './pages/**/*.html')
 })
 plugins: [
-  new MultiPageWebpackPlugin()
+  new MultiplePageWebpackPlugin()
   ...
 ]
 ```
 ```
-entry:MultiHtmlWebpackBuildPlugin.getEntry({
+entry:MultiplePageWebpackPlugin.getEntry({
   entry: path.resolve(__dirname, './pages/**/*.js'),
   template: path.resolve(__dirname, './pages/**/*.html')
 })
 plugins: [
-  new MultiPageWebpackPlugin(({entry, template})=>{\
+  new MultiplePageWebpackPlugin(({entry, template})=>{\
     ...
     return {
       filename: entry + '.html',

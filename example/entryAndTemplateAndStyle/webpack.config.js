@@ -1,10 +1,10 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const multiHtmlWebpackBuildPlugin = require('multiple-page-webpack-plugin')
+const MultiplePageWebpackPlugin = require('multiple-page-webpack-plugin')
 
 module.exports = {
   mode: 'production',
-  entry: multiHtmlWebpackBuildPlugin.getEntry({
+  entry: MultiplePageWebpackPlugin.getEntry({
     entry: path.resolve(__dirname, './pages/**/*.js'),
     style: path.resolve(__dirname, './pages/**/*.css'),
     template: path.resolve(__dirname, './pages/**/*.html')
@@ -21,7 +21,7 @@ module.exports = {
     }]
   },
   plugins: [
-    new multiHtmlWebpackBuildPlugin({
+    new MultiplePageWebpackPlugin({
       minify: {
         collapseWhitespace: true,
         minifyJS: true,

@@ -1,9 +1,9 @@
 const path = require('path')
-const multiHtmlWebpackBuildPlugin = require('multiple-page-webpack-plugin')
+const MultiplePageWebpackPlugin = require('multiple-page-webpack-plugin')
 
 module.exports = {
   mode: 'production',
-  entry: multiHtmlWebpackBuildPlugin.getEntry({
+  entry: MultiplePageWebpackPlugin.getEntry({
     entry: path.resolve(__dirname, './pages/**/*.js'),
     template: path.resolve(__dirname, './pages/**/*.html')
   }),
@@ -13,7 +13,7 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
-    new multiHtmlWebpackBuildPlugin(({entry, template}) => {
+    new MultiplePageWebpackPlugin(({entry, template}) => {
       const suffix = path.extname(template)
       return {
         filename: entry + suffix,
