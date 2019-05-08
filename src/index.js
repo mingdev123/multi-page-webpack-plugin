@@ -3,7 +3,6 @@ const glob = require('glob')
 const globBasePlugin = require('glob-base')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MultiEntryPlugin = require('webpack/lib/MultiEntryPlugin')
-const SingleEntryPlugin = require('webpack/lib/SingleEntryPlugin')
 
 let directories = []  //目录
 
@@ -91,12 +90,8 @@ module.exports = class MultiHtmlWebpackBuildPlugin {
      */
     const entryOption = (context, entry) => {
       Object.keys(entry).forEach(name => {
-        const item = entry[name]
-        if (Array.isArray(item)) {
-          new MultiEntryPlugin(context, item, name).apply(compiler)
-        } else {
-          new SingleEntryPlugin(context, item, name).apply(compiler)
-        }
+        //都是数组不需要判断了
+        new MultiEntryPlugin(context, entry[name], name).apply(compiler)
       })
       return false
     }
